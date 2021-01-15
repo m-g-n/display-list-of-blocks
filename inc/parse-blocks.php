@@ -52,7 +52,7 @@ else :
 			}
 			?>
 		<li class="dlb-list">
-			外枠のブロック名：<?php echo esc_html( $blockname ); ?>
+			<span class="dlb-list__blockname">外枠のブロック名：<?php echo esc_html( $blockname ); ?></span>
 			<?php
 			// クラス名の変数か入れ子の中のブロックの変数があったら.
 			if ( $className || $innerBlocks ) :
@@ -64,12 +64,12 @@ else :
 					// 取得したクラス名の中に 'RJE' が含まれていたら.
 					if ( strpos( $className, 'RJE' ) !== false ) :
 						?>
-				<li style="font-weight:bold">外枠のクラス名：<?php echo esc_html( $className ); ?></li>
+				<li class="dlb-list__classname__rje">外枠のクラス名：<?php echo esc_html( $className ); ?></li>
 				<?php
 					// なかったら.
 					else :
 				?>
-				<li>外枠のクラス名：<?php echo esc_html( $className ); ?></li>
+				<li class="dlb-list__classname">外枠のクラス名：<?php echo esc_html( $className ); ?></li>
 					<?php
 					endif;
 				endif;
@@ -77,7 +77,9 @@ else :
 				// 入れ子の中のブロックの変数があったら.
 				if ( $innerBlocks ) :
 					// 変数を定義
-					$innerBlockClassName = array(); // 入れ子の中のブロック名.
+					$innerBlockName        = '';      // 入れ子の中のブロック名.
+					$innerBlockClassName   = array(); // 入れ子の中のブロックのクラス名.
+					$innerBlockInnerBlocks = array(); // 入れ子の中のブロックのデータ.
 					// 入れ子の中のブロックをループで個別に取得.
 					foreach ( $innerBlocks as $innerBlock ) :
 
@@ -92,25 +94,78 @@ else :
 						if ( isset( $innerBlock['attrs']['className'] ) ) {
 							$innerBlockClassName = $innerBlock['attrs']['className'];
 						}
+						// 入れ子の中のブロックのデータを変数に代入.
+						if ( isset( $innerBlock['innerBlocks'] ) ) {
+							$innerBlockInnerBlocks = $innerBlock['innerBlocks'];
+						}
 						?>
 				<li>
-					内枠のブロック名：<?php echo esc_html( $innerBlockName ); ?>
+					<span class="dlb-list__blockname">内枠1階層めのブロック名：<?php echo esc_html( $innerBlockName ); ?></span>
 						<?php
-						// 内部ブロックのクラス名の変数があったら.
-						if ( $innerBlockClassName ) :
+						// 内部ブロックのクラス名の変数か入れ子の中のブロックの変数があったら.
+						if ( $innerBlockClassName || $innerBlockInnerBlocks ) :
 						?>
 					<ul>
-							<?php
+						<?php
+						// クラス名の変数があったら.
+						if ( $innerBlockClassName ) :
 							// 取得したクラス名の中に 'RJE' が含まれていたら.
 							if ( strpos( $innerBlockClassName, 'RJE' ) !== false ) :
-							?>
-						<li style="font-weight:bold">内枠のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
-							<?php
+								?>
+						<li class="dlb-list__classname__rje">内枠1階層めのクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
+						<?php
 							// なかったら.
 							else :
-							?>
-						<li>内枠のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
-						<?php endif; ?>
+						?>
+						<li class="dlb-list__classname">内枠1階層めのクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
+							<?php
+							endif;
+						endif;
+
+						// 入れ子の中のブロックの変数があったら.
+						if ( $innerBlockInnerBlocks ) :
+							// 変数を定義
+							$innerBlockInnerBlockClassName = array(); // 入れ子の中のブロック名.
+							// 入れ子の中のブロックをループで個別に取得.
+							foreach ( $innerBlockInnerBlocks as $innerBlockInnerBlock ) :
+
+								// ブロック名が空の場合はスキップ.
+								if ( null === $innerBlockInnerBlock['blockName'] ) {
+									continue;
+								}
+
+								// 内部ブロック名を変数に代入.
+								$innerBlockInnerBlockName = $innerBlockInnerBlock['blockName'];
+								// 内部ブロックのクラス名を変数に代入.
+								if ( isset( $innerBlockInnerBlock['attrs']['className'] ) ) {
+									$innerBlockInnerBlockClassName = $innerBlockInnerBlock['attrs']['className'];
+								}
+								?>
+						<li>
+							<span class="dlb-list__blockname">内枠2階層めのブロック名：<?php echo esc_html( $innerBlockInnerBlockName ); ?></span>
+								<?php
+								// 内部ブロックのクラス名の変数があったら.
+								if ( $innerBlockInnerBlockClassName ) :
+								?>
+							<ul>
+									<?php
+									// 取得したクラス名の中に 'RJE' が含まれていたら.
+									if ( strpos( $innerBlockInnerBlockClassName, 'RJE' ) !== false ) :
+									?>
+								<li class="dlb-list__classname__rje">内枠2階層めのクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
+									<?php
+									// なかったら.
+									else :
+									?>
+								<li class="dlb-list__classname">内枠2階層めのクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
+								<?php endif; ?>
+							</ul>
+							<?php endif; ?>
+						</li>
+								<?php
+							endforeach;
+						endif;
+						?>
 					</ul>
 					<?php endif; ?>
 				</li>
