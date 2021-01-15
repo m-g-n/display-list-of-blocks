@@ -1,0 +1,162 @@
+[
+  {
+    "core" : [
+      {
+        "blockName": "paragraph",
+        "ja": "段落ブロック"
+      },
+      {
+        "blockName": "image",
+        "ja": "画像ブロック"
+      },
+      {
+        "blockName": "heading",
+        "ja": "見出しブロック"
+      },
+      {
+        "blockName": "gallery",
+        "ja": "ギャラリーブロック"
+      },
+      {
+        "blockName": "list",
+        "ja": "リストブロック"
+      },
+      {
+        "blockName": "quote",
+        "ja": "引用ブロック"
+      },
+      {
+        "blockName": "audio",
+        "ja": "音声ブロック"
+      },
+      {
+        "blockName": "cover",
+        "ja": "カバーブロック"
+      },
+      {
+        "blockName": "file",
+        "ja": "ファイルブロック"
+      },
+      {
+        "blockName": "video",
+        "ja": "動画ブロック"
+      },
+      {
+        "blockName": "code",
+        "ja": "コードブロック"
+      },
+      {
+        "blockName": "classic",
+        "ja": "クラシックブロック"
+      },
+      {
+        "blockName": "html",
+        "ja": "カスタムHTMLブロック"
+      },
+      {
+        "blockName": "preformatted",
+        "ja": "整形済みテキストブロック"
+      },
+      {
+        "blockName": "pullquote",
+        "ja": "プルクォートブロック"
+      },
+      {
+        "blockName": "table",
+        "ja": "テーブルブロック"
+      },
+      {
+        "blockName": "verse",
+        "ja": "詩ブロック"
+      },
+      {
+        "blockName": "page-break",
+        "ja": "ページ区切りブロック"
+      },
+      {
+        "blockName": "spacer",
+        "ja": "スペーサーブロック"
+      },
+      {
+        "blockName": "buttons",
+        "ja": "ボタン（親）ブロック"
+      },
+      {
+        "blockName": "button",
+        "ja": "ボタン（子）ブロック"
+      },
+      {
+        "blockName": "columns",
+        "ja": "カラム（親）ブロック"
+      },
+      {
+        "blockName": "column",
+        "ja": "カラム（子）ブロック"
+      },
+      {
+        "blockName": "group",
+        "ja": "グループブロック"
+      },
+      {
+        "blockName": "media-text",
+        "ja": "メディアと文章ブロック"
+      },
+      {
+        "blockName": "more",
+        "ja": "続きを読むブロック"
+      },
+      {
+        "blockName": "separator",
+        "ja": "区切りブロック"
+      },
+      {
+        "blockName": "shortcode",
+        "ja": "ショートコードブロック"
+      },
+      {
+        "blockName": "archives",
+        "ja": "アーカイブブロック"
+      },
+      {
+        "blockName": "calendar",
+        "ja": "カレンダーブロック"
+      },
+      {
+        "blockName": "categories",
+        "ja": "カテゴリーブロック"
+      },
+      {
+        "blockName": "latest-comments",
+        "ja": "最新のコメントブロック"
+      },
+      {
+        "blockName": "latest-posts",
+        "ja": "最新の投稿ブロック"
+      },
+      {
+        "blockName": "rss",
+        "ja": "RSSブロック"
+      },
+      {
+        "blockName": "search",
+        "ja": "検索ブロック"
+      },
+      {
+        "blockName": "social-icons",
+        "ja": "ソーシャルアイコンブロック"
+      },
+      {
+        "blockName": "tag-cloud",
+        "ja": "タグクラウドブロック"
+      },
+      {
+        "blockName": "embed",
+        "ja": "埋め込みブロック"
+      },
+      {
+        "blockName": "block",
+        "ja": "コアブロック（再利用ブロックなど）"
+      }
+    ]
+  }
+]

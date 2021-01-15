@@ -31,7 +31,7 @@ else :
 		// 取得したコンテンツ内のブロック群をループして個別の情報を取得.
 		foreach ( $blocks as $block ) :
 			// 変数を定義
-			$blocklist   = '';      // ブロック名.
+			$blockname   = '';      // ブロック名.
 			$className   = array(); // クラス名.
 			$innerBlocks = array(); // 入れ子の中のブロックのデータ.
 
@@ -52,7 +52,7 @@ else :
 			}
 			?>
 		<li class="dlb-list">
-			<span class="dlb-list__blockname">外枠のブロック名：<?php echo esc_html( $blockname ); ?></span>
+			<span class="dlb-list__blockname">外枠のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
 			<?php
 			// クラス名の変数か入れ子の中のブロックの変数があったら.
 			if ( $className || $innerBlocks ) :
@@ -77,7 +77,7 @@ else :
 				// 入れ子の中のブロックの変数があったら.
 				if ( $innerBlocks ) :
 					// 変数を定義
-					$innerBlockName        = '';      // 入れ子の中のブロック名.
+					$blockname             = '';      // 入れ子の中のブロック名.
 					$innerBlockClassName   = array(); // 入れ子の中のブロックのクラス名.
 					$innerBlockInnerBlocks = array(); // 入れ子の中のブロックのデータ.
 					// 入れ子の中のブロックをループで個別に取得.
@@ -89,7 +89,7 @@ else :
 						}
 
 						// 内部ブロック名を変数に代入.
-						$innerBlockName = $innerBlock['blockName'];
+						$blockname = $innerBlock['blockName'];
 						// 内部ブロックのクラス名を変数に代入.
 						if ( isset( $innerBlock['attrs']['className'] ) ) {
 							$innerBlockClassName = $innerBlock['attrs']['className'];
@@ -100,7 +100,7 @@ else :
 						}
 						?>
 				<li>
-					<span class="dlb-list__blockname">内枠1階層めのブロック名：<?php echo esc_html( $innerBlockName ); ?></span>
+					<span class="dlb-list__blockname">内枠1階層めのブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
 						<?php
 						// 内部ブロックのクラス名の変数か入れ子の中のブロックの変数があったら.
 						if ( $innerBlockClassName || $innerBlockInnerBlocks ) :
@@ -135,14 +135,14 @@ else :
 								}
 
 								// 内部ブロック名を変数に代入.
-								$innerBlockInnerBlockName = $innerBlockInnerBlock['blockName'];
+								$blockname = $innerBlockInnerBlock['blockName'];
 								// 内部ブロックのクラス名を変数に代入.
 								if ( isset( $innerBlockInnerBlock['attrs']['className'] ) ) {
 									$innerBlockInnerBlockClassName = $innerBlockInnerBlock['attrs']['className'];
 								}
 								?>
 						<li>
-							<span class="dlb-list__blockname">内枠2階層めのブロック名：<?php echo esc_html( $innerBlockInnerBlockName ); ?></span>
+							<span class="dlb-list__blockname">内枠2階層めのブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
 								<?php
 								// 内部ブロックのクラス名の変数があったら.
 								if ( $innerBlockInnerBlockClassName ) :
