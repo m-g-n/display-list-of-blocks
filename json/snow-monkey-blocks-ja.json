@@ -1,0 +1,198 @@
+[
+  {
+    "snow-monkey-blocks" : [
+      {
+        "blockName": "accordion",
+        "ja": "アコーディオン（親）ブロック"
+      },
+      {
+        "blockName": "accordion--item",
+        "ja": "アコーディオン（子）ブロック"
+      },
+      {
+        "blockName": "alert",
+        "ja": "アラートブロック"
+      },
+      {
+        "blockName": "balloon",
+        "ja": "吹き出しブロック"
+      },
+      {
+        "blockName": "box",
+        "ja": "ボックスブロック"
+      },
+      {
+        "blockName": "btn-box",
+        "ja": "ボタンボックス（マイクロコピーつきボタン）ブロック"
+      },
+      {
+        "blockName": "buttons",
+        "ja": "ボタン（親）ブロック"
+      },
+      {
+        "blockName": "btn",
+        "ja": "ボタン（子）ブロック"
+      },
+      {
+        "blockName": "categories-list",
+        "ja": "カテゴリーリストブロック"
+      },
+      {
+        "blockName": "child-pages",
+        "ja": "このページの子ページブロック【Snow Monkey のみで利用可】"
+      },
+      {
+        "blockName": "container",
+        "ja": "コンテナーブロック"
+      },
+      {
+        "blockName": "contents-outline",
+        "ja": "目次ブロック【Snow Monkey のみで利用可】"
+      },
+      {
+        "blockName": "countdown",
+        "ja": "カウントダウンタイマーブロック"
+      },
+      {
+        "blockName": "directory-structure",
+        "ja": "ディレクトリ構造ブロック"
+      },
+      {
+        "blockName": "evaluation-star",
+        "ja": "星評価ブロック"
+      },
+      {
+        "blockName": "faq",
+        "ja": "FAQブロック"
+      },
+      {
+        "blockName": "information",
+        "ja": "インフォメーション（親）ブロック"
+      },
+      {
+        "blockName": "information--item",
+        "ja": "インフォメーション（子）ブロック"
+      },
+      {
+        "blockName": "items",
+        "ja": "項目ブロック"
+      },
+      {
+        "blockName": "items--item--standard",
+        "ja": "項目（スタンダード）ブロック"
+      },
+      {
+        "blockName": "items--item--block-link",
+        "ja": "項目（ブロックリンク）ブロック"
+      },
+      {
+        "blockName": "items--banner",
+        "ja": "項目（バナー）ブロック"
+      },
+      {
+        "blockName": "like-me-box",
+        "ja": "いいね！ボックスブロック"
+      },
+      {
+        "blockName": "limited-datetime",
+        "ja": "期間限定表示ブロック"
+      },
+      {
+        "blockName": "list",
+        "ja": "アイコンリストブロック"
+      },
+      {
+        "blockName": "media-text",
+        "ja": "メディアと文章ブロック"
+      },
+      {
+        "blockName": "panels",
+        "ja": "パネル（親）ブロック"
+      },
+      {
+        "blockName": "panels--item",
+        "ja": "パネル（子）ブロック"
+      },
+      {
+        "blockName": "pickup-slider",
+        "ja": "ピックアップスライダーブロック【非推奨】"
+      },
+      {
+        "blockName": "price-menu",
+        "ja": "価格メニューブロック"
+      },
+      {
+        "blockName": "pricing-table",
+        "ja": "価格表ブロック"
+      },
+      {
+        "blockName": "rating-box",
+        "ja": "レーティングボックスブロック"
+      },
+      {
+        "blockName": "recent-posts",
+        "ja": "最近の投稿ブロック【Snow Monkey のみで利用可】"
+      },
+      {
+        "blockName": "rss",
+        "ja": "RSSブロック【Snow Monkey のみで利用可】"
+      },
+      {
+        "blockName": "section",
+        "ja": "セクションブロック"
+      },
+      {
+        "blockName": "section-break-the-grid",
+        "ja": "セクション（ブロークングリッド）ブロック"
+      },
+      {
+        "blockName": "section-side-heading",
+        "ja": "セクション（サイド見出し）ブロック"
+      },
+      {
+        "blockName": "section-with-bgimage",
+        "ja": "セクション（背景画像あり）ブロック"
+      },
+      {
+        "blockName": "section-with-bgvideo",
+        "ja": "セクション（背景動画あり）ブロック"
+      },
+      {
+        "blockName": "slider",
+        "ja": "スライダーブロック【非推奨】"
+      },
+      {
+        "blockName": "spider-pickup-slider",
+        "ja": "ピックアップスライダーブロック"
+      },
+      {
+        "blockName": "spider-slider",
+        "ja": "スライダーブロック"
+      },
+      {
+        "blockName": "step",
+        "ja": "ステップ（親）ブロック"
+      },
+      {
+        "blockName": "step--item--free",
+        "ja": "ステップ（子）ブロック"
+      },
+      {
+        "blockName": "taxonomy-posts",
+        "ja": "任意のタクソノミーの投稿ブロック【Snow Monkey のみで利用可】"
+      },
+      {
+        "blockName": "taxonomy-terms",
+        "ja": "タクソノミーブロック【Snow Monkey のみで利用可】"
+      },
+      {
+        "blockName": "testimonial",
+        "ja": "お客様の声ブロック"
+      },
+      {
+        "blockName": "thumbnail-gallery",
+        "ja": "サムネイルギャラリーブロック【非推奨】"
+      }
+    ]
+  }
+]
