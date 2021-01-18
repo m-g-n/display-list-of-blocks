@@ -31,3 +31,32 @@
 	font-weight: bold;
 	margin-bottom: 10px;
 }
+
+.block-name-accordion {
+	margin-bottom: calc(var(--_space, 1.76923rem)*1*var(--_margin-scale, 1));
+}
+
+.block-name__btn[type=checkbox] {
+	display: none;
+}
+
+.block-name__btn + label {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 15px;
+	background: #333;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.block-name__panel {
+	overflow: hidden;
+	height: 0;
+	box-sizing: border-box;
+	transition: 2s ease-in-out;
+}
+
+.block-name__btn[type=checkbox]:checked + label + .block-name__panel {
+	height: auto;
+}

@@ -2,7 +2,7 @@
 /**
  * Plugin name: Display List of Blocks
  * Description: 各ページで利用しているブロックの一覧をページコンテンツ最下部に表示します。類人猿パターンブロック関連のクラスがついていたら太字で表示します
- * Version: 0.0.4
+ * Version: 0.0.5
  * Author: mgn Inc.,
  * Author URI: https://www.m-g-n.me/
  * License: GPL-2.0+
@@ -34,5 +34,7 @@ require_once MGN_DLB_PATH . 'inc/parse-blocks.php';
 require_once MGN_DLB_PATH . 'inc/merge-json.php';
 // ブロック名を日本語で取得するJSONファイルを読み込み.
 require_once MGN_DLB_PATH . 'inc/json-decode.php';
+// 表示用のボタンを追加.
+require_once MGN_DLB_PATH . 'inc/add-button-to-footer-area.php';
 // スタイルを読み込み.
 require_once MGN_DLB_PATH . 'inc/enqueue.php';

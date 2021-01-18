@@ -24,8 +24,8 @@ else :
 		// 表示する内容を取得.
 		ob_start();
 		?>
-<aside class="dlb-blocks">
-	<h2>このページで利用しているブロックの情報</h2>
+<div class="dlb-blocks">
+	<h3>このページで利用しているブロックの情報</h3>
 	<ul class="dlb-lists">
 		<?php
 		// 取得したコンテンツ内のブロック群をループして個別の情報を取得.
@@ -178,18 +178,9 @@ else :
 		</li>
 	<?php endforeach; ?>
 	</ul>
-</aside>
+</div>
 		<?php
 		// 取得したデータ全てを返す
 		return ob_get_clean();
-	}
-
-	// the_contentの直後に出力
-	add_filter( 'the_content', 'add_under_content_list_of_blocks', '10' );
-	function add_under_content_list_of_blocks( $content ) {
-		// 取得したブロックの情報を全て変数に代入
-		$list_of_blocks = display_list_of_blocks();
-		// 記事コンテンツにブロックの情報を付加
-		return $content . $list_of_blocks;
 	}
 endif;
