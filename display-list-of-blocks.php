@@ -2,7 +2,7 @@
 /**
  * Plugin name: Display List of Blocks
  * Description: 各ページで利用しているブロックの一覧をページコンテンツ最下部に表示します。類人猿パターンブロック関連のクラスがついていたら太字で表示します
- * Version: 0.0.5
+ * Version: 0.1.0
  * Author: mgn Inc.,
  * Author URI: https://www.m-g-n.me/
  * License: GPL-2.0+
