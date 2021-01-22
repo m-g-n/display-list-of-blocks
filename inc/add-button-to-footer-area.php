@@ -18,8 +18,8 @@ function add_under_content_list_of_blocks( $content ) {
 	<div class="block-name-accordion js-accordion">
 		<aside class="block-name-area">
 			<input type="checkbox" id="list-of-blocks" class="block-name__btn" aria-hidden="true">
-			<label for="list-of-blocks" aria-expanded="false"><h2>使っているブロックを一覧表示</h2><span class="state__panel">開く</span></label>
-			<div class="block-name__panel closed" aria-hidden="true">
+			<label for="list-of-blocks" aria-expanded="false" id="list-of-blocks-label"><h2>このページで利用しているブロックを一覧表示</h2><span  id="state-panel" class="state__panel">開く</span></label>
+			<div id="block-name-panel" class="block-name__panel closed" aria-hidden="true">
 				<div class="block-name__panel-content"><?php echo wp_kses_post( $list_of_blocks ); ?></div>
 			</div>
 		</aside>
