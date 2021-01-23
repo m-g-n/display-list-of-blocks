@@ -10,6 +10,7 @@
 
 .dlb-lists {
 	margin: 10px;
+	list-style-type: decimal;
 }
 
 @media (min-width: 48em) {

@@ -94,7 +94,7 @@ function display_list_of_blocks() {
 						}
 						?>
 				<li>
-					<span class="dlb-list__blockname">内枠1階層めのブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
+					<span class="dlb-list__blockname">内枠1階層目のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
 						<?php
 						// 内部ブロックのクラス名の変数か入れ子の中のブロックの変数があったら.
 						if ( $innerBlockClassName || $innerBlockInnerBlocks ) :
@@ -106,12 +106,12 @@ function display_list_of_blocks() {
 							// 取得したクラス名の中に 'RJE' が含まれていたら.
 							if ( strpos( $innerBlockClassName, 'RJE' ) !== false ) :
 								?>
-						<li class="dlb-list__classname__rje">内枠1階層めのクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
+						<li class="dlb-list__classname__rje">内枠1階層目のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
 						<?php
 							// なかったら.
 							else :
 						?>
-						<li class="dlb-list__classname">内枠1階層めのクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
+						<li class="dlb-list__classname">内枠1階層目のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
 							<?php
 							endif;
 						endif;
@@ -136,7 +136,7 @@ function display_list_of_blocks() {
 								}
 								?>
 						<li>
-							<span class="dlb-list__blockname">内枠2階層めのブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
+							<span class="dlb-list__blockname">内枠2階層目のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
 								<?php
 								// 内部ブロックのクラス名の変数があったら.
 								if ( $innerBlockInnerBlockClassName ) :
@@ -146,12 +146,12 @@ function display_list_of_blocks() {
 									// 取得したクラス名の中に 'RJE' が含まれていたら.
 									if ( strpos( $innerBlockInnerBlockClassName, 'RJE' ) !== false ) :
 									?>
-								<li class="dlb-list__classname__rje">内枠2階層めのクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
+								<li class="dlb-list__classname__rje">内枠2階層目のクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
 									<?php
 									// なかったら.
 									else :
 									?>
-								<li class="dlb-list__classname">内枠2階層めのクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
+								<li class="dlb-list__classname">内枠2階層目のクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
 								<?php endif; ?>
 							</ul>
 							<?php endif; ?>
