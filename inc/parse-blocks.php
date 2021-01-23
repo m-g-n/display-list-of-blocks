@@ -46,30 +46,39 @@ function display_list_of_blocks() {
 			}
 			?>
 		<li class="dlb-list">
-			<span class="dlb-list__blockname">外枠のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
+			<p class="dlb-list__blockname">外枠のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></p>
 			<?php
 			// クラス名の変数か入れ子の中のブロックの変数があったら.
 			if ( $className || $innerBlocks ) :
-			?>
-			<ul>
-				<?php
 				// クラス名の変数があったら.
 				if ( $className ) :
 					// 取得したクラス名の中に 'RJE' が含まれていたら.
 					if ( strpos( $className, 'RJE' ) !== false ) :
 						?>
-				<li class="dlb-list__classname__rje">外枠のクラス名：<?php echo esc_html( $className ); ?></li>
+			<p class="dlb-list__classname__rje">外枠のクラス名：<?php echo esc_html( $className ); ?></p>
 				<?php
 					// なかったら.
 					else :
 				?>
-				<li class="dlb-list__classname">外枠のクラス名：<?php echo esc_html( $className ); ?></li>
+			<p class="dlb-list__classname">外枠のクラス名：<?php echo esc_html( $className ); ?></p>
 					<?php
 					endif;
 				endif;
 
 				// 入れ子の中のブロックの変数があったら.
 				if ( $innerBlocks ) :
+					// ブロックの数を数える
+					$num_innerBlocks = count( $innerBlocks );
+
+					// ブロックが1つだったら
+					if ( 1 === $num_innerBlocks ) :
+					?>
+			<ul class="single-inner-block">
+					<?php else : ?>
+			<ul class="multiple-inner-blocks">
+					<?php
+					endif;
+
 					// 変数を定義
 					$blockname             = '';      // 入れ子の中のブロック名.
 					$innerBlockClassName   = array(); // 入れ子の中のブロックのクラス名.
@@ -93,82 +102,90 @@ function display_list_of_blocks() {
 							$innerBlockInnerBlocks = $innerBlock['innerBlocks'];
 						}
 						?>
-				<li>
-					<span class="dlb-list__blockname">内枠1階層目のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
+				<li class="dlb-list__inner">
+					<p class="dlb-list__blockname">内枠1階層目のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></p>
 						<?php
 						// 内部ブロックのクラス名の変数か入れ子の中のブロックの変数があったら.
 						if ( $innerBlockClassName || $innerBlockInnerBlocks ) :
-						?>
-					<ul>
-						<?php
-						// クラス名の変数があったら.
-						if ( $innerBlockClassName ) :
-							// 取得したクラス名の中に 'RJE' が含まれていたら.
-							if ( strpos( $innerBlockClassName, 'RJE' ) !== false ) :
+							// クラス名の変数があったら.
+							if ( $innerBlockClassName ) :
+								// 取得したクラス名の中に 'RJE' が含まれていたら.
+								if ( strpos( $innerBlockClassName, 'RJE' ) !== false ) :
+									?>
+					<p class="dlb-list__classname__rje">内枠1階層目のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></p>
+							<?php
+								// なかったら.
+								else :
+							?>
+					<p class="dlb-list__classname">内枠1階層目のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></p>
+								<?php
+								endif;
+							endif;
+
+							// 入れ子の中のブロックの変数があったら.
+							if ( $innerBlockInnerBlocks ) :
+								// ブロックの数を数える
+								$num_innerBlockInnerBlocks = count( $innerBlockInnerBlocks );
+
+								// ブロックが1つだったら
+								if ( 1 === $num_innerBlockInnerBlocks ) :
 								?>
-						<li class="dlb-list__classname__rje">内枠1階層目のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
-						<?php
-							// なかったら.
-							else :
-						?>
-						<li class="dlb-list__classname">内枠1階層目のクラス名：<?php echo esc_html( $innerBlockClassName ); ?></li>
+					<ul class="single-inner-block hierarchy-2nd">
+								<?php else : ?>
+					<ul class="multiple-inner-blocks hierarchy-2nd">
+								<?php
+								endif;
+
+								// 変数を定義
+								$blockname                     = '';      // 入れ子の中のブロック名.
+								$innerBlockInnerBlockClassName = array(); // 入れ子の中のブロック名.
+								// 入れ子の中のブロックをループで個別に取得.
+								foreach ( $innerBlockInnerBlocks as $innerBlockInnerBlock ) :
+
+									// ブロック名が空の場合はスキップ.
+									if ( null === $innerBlockInnerBlock['blockName'] ) {
+										continue;
+									}
+
+									// 内部ブロック名を変数に代入.
+									$blockname = $innerBlockInnerBlock['blockName'];
+									// 内部ブロックのクラス名を変数に代入.
+									if ( isset( $innerBlockInnerBlock['attrs']['className'] ) ) {
+										$innerBlockInnerBlockClassName = $innerBlockInnerBlock['attrs']['className'];
+									}
+									?>
+						<li class="dlb-list__inner__deep">
+							<p class="dlb-list__blockname">内枠2階層目のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></p>
+									<?php
+									// 内部ブロックのクラス名の変数があったら.
+									if ( $innerBlockInnerBlockClassName ) :
+										// 取得したクラス名の中に 'RJE' が含まれていたら.
+										if ( strpos( $innerBlockInnerBlockClassName, 'RJE' ) !== false ) :
+										?>
+							<p class="dlb-list__classname__rje">内枠2階層目のクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></p>
+										<?php
+										// なかったら.
+										else :
+										?>
+							<p class="dlb-list__classname">内枠2階層目のクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></p>
+										<?php
+										endif;
+									endif;
+									?>
+						</li>
+							<?php endforeach; ?>
+					</ul>
 							<?php
 							endif;
 						endif;
-
-						// 入れ子の中のブロックの変数があったら.
-						if ( $innerBlockInnerBlocks ) :
-							// 変数を定義
-							$innerBlockInnerBlockClassName = array(); // 入れ子の中のブロック名.
-							// 入れ子の中のブロックをループで個別に取得.
-							foreach ( $innerBlockInnerBlocks as $innerBlockInnerBlock ) :
-
-								// ブロック名が空の場合はスキップ.
-								if ( null === $innerBlockInnerBlock['blockName'] ) {
-									continue;
-								}
-
-								// 内部ブロック名を変数に代入.
-								$blockname = $innerBlockInnerBlock['blockName'];
-								// 内部ブロックのクラス名を変数に代入.
-								if ( isset( $innerBlockInnerBlock['attrs']['className'] ) ) {
-									$innerBlockInnerBlockClassName = $innerBlockInnerBlock['attrs']['className'];
-								}
-								?>
-						<li>
-							<span class="dlb-list__blockname">内枠2階層目のブロック名：<?php echo esc_html( get_jpn_block_name( $blockname ) ); ?></span>
-								<?php
-								// 内部ブロックのクラス名の変数があったら.
-								if ( $innerBlockInnerBlockClassName ) :
-								?>
-							<ul>
-									<?php
-									// 取得したクラス名の中に 'RJE' が含まれていたら.
-									if ( strpos( $innerBlockInnerBlockClassName, 'RJE' ) !== false ) :
-									?>
-								<li class="dlb-list__classname__rje">内枠2階層目のクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
-									<?php
-									// なかったら.
-									else :
-									?>
-								<li class="dlb-list__classname">内枠2階層目のクラス名：<?php echo esc_html( $innerBlockInnerBlockClassName ); ?></li>
-								<?php endif; ?>
-							</ul>
-							<?php endif; ?>
-						</li>
-								<?php
-							endforeach;
-						endif;
 						?>
-					</ul>
-					<?php endif; ?>
 				</li>
-						<?php
-					endforeach;
-				endif;
-				?>
+				<?php endforeach; ?>
 			</ul>
-		<?php endif; ?>
+				<?php
+				endif;
+			endif;
+			?>
 		</li>
 	<?php endforeach; ?>
 	</ul>

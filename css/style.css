@@ -1,13 +1,19 @@
 @charset "utf-8";
 
+/**
+ * ブロック大枠
+ */
 .dlb-blocks {
 	margin: 30px 0;
 	padding: 30px;
-	background-color: #eee;
-	border: 1px solid #ddd;
+	background-color: #f7f7f7;
+	border: 1px solid #eee;
 	border-radius: 4px;
 }
 
+/**
+ * リスト ページ枠
+ */
 .dlb-lists {
 	margin: 10px;
 	list-style-type: decimal;
@@ -17,6 +23,13 @@
 	.dlb-lists {
 		margin: 30px;
 	}
+}
+
+/**
+ * リスト外枠
+ */
+.dlb-lists ul {
+	list-style-type: none;
 }
 
 .dlb-list {
@@ -30,15 +43,100 @@
 
 .dlb-list__classname {
 	font-size: 15px;
+	margin-left: 24px;
 	margin-bottom: 10px;
 }
 
 .dlb-list__classname__rje {
 	font-size: 15px;
 	font-weight: bold;
+	margin-left: 24px;
 	margin-bottom: 10px;
 }
 
+/**
+ * 入れ子リスト第1階層枠
+ */
+.dlb-list ul {
+	border-radius: 4px;
+	margin-left: 0;
+}
+
+.dlb-list > ul {
+	background-color: #eee;
+}
+
+.single-inner-block {
+	padding: 0 24px 20px;
+	border: 1px solid #ddd;
+}
+
+.multiple-inner-blocks {
+	padding: 10px 12px;
+	border: 1px dashed #ddd;
+}
+
+.dlb-list__inner {
+	margin-top: 10px;
+}
+
+.multiple-inner-blocks > .dlb-list__inner {
+	padding: 0 12px 10px;
+	border-radius: 4px;
+}
+
+.multiple-inner-blocks > .dlb-list__inner {
+	background-color: #e7e7e7;
+	border: 1px solid #d6d6d6;
+}
+
+.multiple-inner-blocks > .dlb-list__inner__deep {
+	background-color: #d6d6d6;
+	border: 1px solid #c5c5c5;
+}
+
+.dlb-list__inner + .dlb-list__inner {
+	margin-top: 10px;
+}
+
+.dlb-list__inner__deep > p {
+	margin-bottom: 0;
+}
+
+/**
+ * 入れ子リスト第2階層枠
+ */
+.dlb-list__inner ul {
+	border-radius: 4px;
+	margin-left: 0;
+}
+
+.dlb-list__inner > ul {
+	background-color: #ddd;
+}
+
+.single-inner-block.hierarchy-2nd {
+	padding: 0 24px 12px;
+	border: 1px solid #ccc;
+}
+
+.multiple-inner-blocks.hierarchy-2nd {
+	background-color: #ddd;
+	border: 1px dashed #ccc;
+}
+
+.multiple-inner-blocks > .dlb-list__inner__deep {
+	padding: 0 12px 12px;
+	border-radius: 4px;
+}
+
+.dlb-list__inner__deep + .dlb-list__inner__deep {
+	margin-top: 12px;
+}
+
+/**
+ * 表示ボタン、パネル
+ */
 .block-name-accordion {
 	margin-bottom: calc(var(--_space, 1.76923rem)*1*var(--_margin-scale, 1));
 }
