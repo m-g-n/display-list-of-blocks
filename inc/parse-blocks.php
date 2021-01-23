@@ -9,21 +9,15 @@
  * ブロックの一覧をページコンテンツ最下部に表示
  */
 
-// モバイルからのアクセスだったら表示しない.
-if ( wp_is_mobile() ) :
-	return;
+function display_list_of_blocks() {
+	// 投稿データを取得.
+	global $post;
+	// コンテンツ内のブロックの情報を取得.
+	$blocks = parse_blocks( $post->post_content );
 
-// それ以外だったら.
-else :
-	function display_list_of_blocks() {
-		// 投稿データを取得.
-		global $post;
-		// コンテンツ内のブロックの情報を取得.
-		$blocks = parse_blocks( $post->post_content );
-
-		// 表示する内容を取得.
-		ob_start();
-		?>
+	// 表示する内容を取得.
+	ob_start();
+	?>
 <div class="dlb-blocks">
 	<h3>このページで利用しているブロックの情報</h3>
 	<ul class="dlb-lists">
@@ -179,8 +173,7 @@ else :
 	<?php endforeach; ?>
 	</ul>
 </div>
-		<?php
-		// 取得したデータ全てを返す
-		return ob_get_clean();
-	}
-endif;
+	<?php
+	// 取得したデータ全てを返す
+	return ob_get_clean();
+}
