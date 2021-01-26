@@ -1,9 +1,9 @@
 # Display List of Blocks
 - Contributors: mgn
-- Tags: gutenberg, block, blocks, editor, gutenberg blocks, page builder, landing page, microcopy, steps, call to action
+- Tags: gutenberg, block, blocks, editor, gutenberg blocks, page builder, landing page, display blocks
 - Requires at least: 5.6
 - Tested up to: 5.6
-- Stable tag: 0.0.7
+- Stable tag: 0.1.0
 - Requires PHP: 7.3
 - License: GPLv2 or later
 - License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,10 @@ Display List of Blocks は WordPress 各ページで利用しているブロッ�
 - 現時点ではまだベータ版です
 
 ## 変更履歴
+
+### 0.1.0
+
+- ログインしている状態でのみ表示されるように変更.
 
 ### 0.0.7
 
